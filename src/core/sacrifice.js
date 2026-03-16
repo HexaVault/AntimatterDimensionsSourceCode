@@ -24,7 +24,7 @@ export class Sacrifice {
   }
 
   static get meetsNonBoostConditions() {
-    return  DimBoost.purchasedBoosts > 4 && !EternityChallenge(3).isRunning &&
+    return DimBoost.purchasedBoosts > 4 && !EternityChallenge(3).isRunning &&
       AntimatterDimension(8).totalAmount.gt(0) && Currency.antimatter.lt(Player.infinityLimit) &&
       !Enslaved.isRunning;
   }
