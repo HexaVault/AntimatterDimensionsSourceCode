@@ -23,6 +23,21 @@ export class Sacrifice {
     return "Need to Crunch";
   }
 
+  static get meetsNonBoostConditions() {
+    return  DimBoost.purchasedBoosts > 4 && !EternityChallenge(3).isRunning &&
+      AntimatterDimension(8).totalAmount.gt(0) && Currency.antimatter.lt(Player.infinityLimit) &&
+      !Enslaved.isRunning;
+  }
+
+    static get nonBoostDisabledCondition() {
+    if (NormalChallenge(10).isRunning) return "8th Dimensions are disabled";
+    if (EternityChallenge(3).isRunning) return "Eternity Challenge 3";
+    if (DimBoost.purchasedBoosts < 5) return `Requires ${formatInt(5)} Dimension Boosts`;
+    if (AntimatterDimension(8).totalAmount.eq(0)) return "No 8th Antimatter Dimensions";
+    if (Player.isInAntimatterChallenge) return "Challenge goal reached";
+    return "Need to Crunch";
+  }
+
   static getSacrificeDescription(changes) {
     const f = (name, condition) => (name in changes ? changes[name] : condition);
     let factor = 2;
