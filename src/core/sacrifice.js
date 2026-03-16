@@ -29,7 +29,7 @@ export class Sacrifice {
       !Enslaved.isRunning;
   }
 
-    static get nonBoostDisabledCondition() {
+  static get nonBoostDisabledCondition() {
     if (NormalChallenge(10).isRunning) return "8th Dimensions are disabled";
     if (EternityChallenge(3).isRunning) return "Eternity Challenge 3";
     if (DimBoost.purchasedBoosts < 5) return `Requires ${formatInt(5)} Dimension Boosts`;
