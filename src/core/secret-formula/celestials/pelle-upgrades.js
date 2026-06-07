@@ -176,7 +176,7 @@ export const pelleUpgrades = {
     id: 19,
     description: "Eternity Challenge completions no longer reset on Armageddon",
     cost: 1e26,
-    formatCost,c
+    formatCost,
   },
   dilationUpgradesNoReset: {
     id: 20,

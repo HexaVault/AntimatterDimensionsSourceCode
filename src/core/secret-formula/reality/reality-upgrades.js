@@ -105,7 +105,7 @@ export const realityUpgrades = [
     checkRequirement: () => !player.reality.gainedAutoAchievements,
     checkEvent: GAME_EVENT.ETERNITY_RESET_BEFORE,
     canLock: true,
-    // This lock event can only be seen if you are attempting to get ACHNR with the lock on, so we can specify ACHNR here
+    // This lock event can only be seen if you are attempting to get ACHNR with the lock on, so we can state ACHNR here
     lockEvent: "gain an automatic achievement (through ACHNR)",
     description: "Tachyon Particle gain is boosted based on Achievement multiplier",
     effect: () => Math.sqrt(Achievements.power),
