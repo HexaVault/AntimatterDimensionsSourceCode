@@ -102,7 +102,7 @@ export const pelleUpgrades = {
   },
   dimBoostResetsNothing: {
     id: 7,
-    description: "Dimension Boosts no longer reset anything",
+    description: "Dimension Boosts no longer reset anything. Galaxies only reset Dimension Boosts.",
     cost: 1e11,
     formatCost,
   },

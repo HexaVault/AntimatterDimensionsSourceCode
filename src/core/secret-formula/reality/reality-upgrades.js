@@ -105,7 +105,8 @@ export const realityUpgrades = [
     checkRequirement: () => !player.reality.gainedAutoAchievements,
     checkEvent: GAME_EVENT.ETERNITY_RESET_BEFORE,
     canLock: true,
-    // We don't have lockEvent because the modal can never show up for this upgrade
+    // This lock event can only be seen if you are attempting to get ACHNR with the lock on, so we can specify ACHNR here
+    lockEvent: "gain an automatic achievement (through ACHNR)",
     description: "Tachyon Particle gain is boosted based on Achievement multiplier",
     effect: () => Math.sqrt(Achievements.power),
     formatEffect: value => formatX(value, 2, 2)
@@ -346,7 +347,7 @@ export const realityUpgrades = [
     checkRequirement: () => MachineHandler.gainedRealityMachines.gte(5000) &&
       Glyphs.activeWithoutCompanion.length === 0,
     canLock: true,
-    lockEvent: "equip a non-Companion Glyph",
+    lockEvent: () => `equip a non-Companion Glyph or Reality below ${formatInt(5000)} RM`,
     checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
     description: "Gain another Glyph slot",
     effect: () => 1
