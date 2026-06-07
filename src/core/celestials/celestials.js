@@ -47,7 +47,7 @@ GameDatabase.celestials.descriptions = [
       Time Theorem generation from Dilation Glyphs is disabled.
       Certain challenge goals are increased.
       Stored game time is discharged at a reduced effectiveness (exponent^${format(0.55, 2, 2)}).
-      Dimensional Sacrifice is Disabled.`;
+      Dimensional Sacrifice is disabled.`;
     }
   },
   {
