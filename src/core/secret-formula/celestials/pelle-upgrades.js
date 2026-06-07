@@ -176,7 +176,7 @@ export const pelleUpgrades = {
     id: 19,
     description: "Eternity Challenge completions no longer reset on Armageddon",
     cost: 1e26,
-    formatCost,
+    formatCost,c
   },
   dilationUpgradesNoReset: {
     id: 20,
@@ -192,7 +192,7 @@ export const pelleUpgrades = {
   },
   replicantiGalaxyEM40: {
     id: 22,
-    description: "Replicanti Galaxies no longer reset anything they normally reset",
+    description: "Replicanti Galaxies no longer reset anything they normally reset, but still reduce Replicanti.",
     cost: 1e30,
     formatCost,
   }

@@ -799,6 +799,7 @@ export const AutomatorBackend = {
     // program flow to do something else other than simply advancing to the next line
     switch (this.runCurrentCommand()) {
       case AUTOMATOR_COMMAND_STATUS.NEXT_TICK_SAME_INSTRUCTION:
+      case AUTOMATOR_COMMAND_STATUS.SAME_INSTRUCTION:
         break;
       case AUTOMATOR_COMMAND_STATUS.HALT:
         this.stop();
