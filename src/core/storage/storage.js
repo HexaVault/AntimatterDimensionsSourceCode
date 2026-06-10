@@ -420,18 +420,24 @@ export const GameStorage = {
     Cloud.resetTempState();
   },
 
+  // eslint-disable-next-line complexity
   loadPlayerObject(playerObject) {
     this.saved = 0;
 
     const checkString = this.checkPlayerObject(playerObject);
     if (playerObject === Player.defaultStart || checkString !== "") {
-      if (DEV && checkString !== "") {
+      if (DEV && checkString !== "" && !dev.attemptFixImports) {
         // eslint-disable-next-line no-console
         console.log(`Savefile was invalid and has been reset - ${checkString}`);
       }
-      player = deepmergeAll([{}, Player.defaultStart]);
-      player.records.gameCreatedTime = Date.now();
-      player.lastUpdate = Date.now();
+
+      if (dev.attemptFixImports) {
+        dev.fixSave(playerObject)
+      } else {
+        player = deepmergeAll([{}, Player.defaultStart]);
+        player.records.gameCreatedTime = Date.now();
+        player.lastUpdate = Date.now();
+      }
       if (DEV) {
         devMigrations.setLatestTestVersion(player);
       }

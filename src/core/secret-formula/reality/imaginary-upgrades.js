@@ -140,7 +140,7 @@ export const imaginaryUpgrades = [
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     description: "Increase Imaginary Machine Cap based on Imaginary Upgrades purchased",
     effect: () => 1 + ImaginaryUpgrades.totalRebuyables / 20 + ImaginaryUpgrades.totalSinglePurchase / 2,
-    formatEffect: value => `${formatX(value, 2, 1)}`,
+    formatEffect: value => `${formatX(value, 2, 2)}`,
     isDisabledInDoomed: true
   },
   {
