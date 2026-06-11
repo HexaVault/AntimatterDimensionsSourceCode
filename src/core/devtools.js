@@ -1,8 +1,9 @@
 import { sha512_256 } from "js-sha512";
 
+import { deepmergeAll } from "../utility/deepmerge";
+
 import { DC } from "./constants";
 import FullScreenAnimationHandler from "./full-screen-animation-handler";
-import { deepmergeAll } from "../utility/deepmerge";
 
 /* eslint-disable no-console */
 // Disabling no-console here seems
@@ -40,6 +41,7 @@ dev.cancerize = function() {
 // Iterates through every item in A and B
 // If A has a broken value in anyway, it will set it to the value in B
 // This could fail if saves are irrepairably damaged, but still worth trying.
+// eslint-disable-next-line complexity
 function fixSaveIterator(value, value2) {
   for (const item in value) {
     if (value[item] instanceof Decimal && value2[item] !== undefined) {
@@ -56,30 +58,31 @@ function fixSaveIterator(value, value2) {
           value[item] = value2[item];
         }
       } else if (value[item] > 1e300 || value[item] < 0)
-      value[item] = value2[item];
+        value[item] = value2[item];
     }
     if ((value[item] instanceof Object || value[item] instanceof Array) &&
       !(value[item] instanceof Decimal) && value2[item] !== undefined)
       value[item] = fixSaveIterator(value[item], value2[item]);
     if (value[item] === undefined && value2[item] !== undefined)
       value[item] = value2[item];
-    // If neither the save nor the default player object can figure out what this prop is, we probably dont need to keep it
+    // If neither the save nor the default player object can figure out what this prop is,
+    // we probably dont need to keep it
     if (value[item] === undefined && value2[item] === undefined)
-      delete value[item]
+      delete value[item];
   }
   return value;
-};
+}
 
 // This attempts to forcibly fix all player values, and override the existing save
 // This isn't the best persay, but frankly its worth having, because saves do inevitably break.
 dev.fixSave = function(save) {
-  player = deepmergeAll([Player.defaultStart, save ?? player])
+  player = deepmergeAll([Player.defaultStart, save ?? player]);
   player = fixSaveIterator(player, Player.defaultStart);
   GameStorage.save();
 };
 
 // If true, it will attempt to run dev.fixSave on importing a broken save
-dev.attemptFixImports = false
+dev.attemptFixImports = false;
 
 dev.updateTDCosts = function() {
   for (let tier = 1; tier < 9; tier++) {
