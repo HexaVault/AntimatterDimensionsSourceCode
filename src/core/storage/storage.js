@@ -156,9 +156,17 @@ export const GameStorage = {
       return;
     }
     const newPlayer = GameSaveSerializer.deserialize(saveData);
+    // If we're attempting to fix imports anyways
     if (this.checkPlayerObject(newPlayer) !== "") {
-      Modal.message.show("Could not load the save (format unrecognized or invalid).");
-      return;
+      // If we are repairing imports, and the player object fail starts with B, we know it is because
+      // there are some broken player objects that might be repairable. If we are fixing, we can therefore
+      // attempt to forcibly fix the broken save anyways.
+      if (dev.attemptFixImports && this.checkPlayerObject(newPlayer)[0] === "B") {
+        Modal.message.show("Save format is damaged, attempting save repairal");
+      } else {
+        Modal.message.show("Could not load the save (format unrecognized or invalid).");
+        return;
+      }
     }
     this.oldBackupTimer = player.backupTimer;
     Modal.hideAll();
@@ -220,13 +228,13 @@ export const GameStorage = {
             hasNaN = hasNaN || thisNaN;
             break;
           case "number":
-            thisNaN = Number.isNaN(prop);
+            thisNaN = Number.isNaN(prop) || !Number.isFinite(prop);
             hasNaN = hasNaN || thisNaN;
             if (thisNaN) invalidProps.push(`${path}.${key}`);
             break;
           case "string":
-            // If we're attempting to import, all NaN entries will still be strings
-            thisNaN = prop === "NaN";
+            // If we're attempting to import, all NaN or infinity entries will still be strings
+            thisNaN = prop === "NaN" || prop === "infinity";
             hasNaN = hasNaN || thisNaN;
             if (thisNaN) invalidProps.push(`${path}.${key}`);
             break;
@@ -237,7 +245,7 @@ export const GameStorage = {
     checkNaN(save, "player");
 
     if (invalidProps.length === 0) return "";
-    return `${quantify("NaN player property", invalidProps.length)} found:
+    return `${quantify("Broken player property", invalidProps.length)} found:
       ${invalidProps.join(", ")}`;
   },
 
@@ -432,7 +440,7 @@ export const GameStorage = {
       }
 
       if (dev.attemptFixImports) {
-        dev.fixSave(playerObject)
+        dev.fixSave(playerObject);
       } else {
         player = deepmergeAll([{}, Player.defaultStart]);
         player.records.gameCreatedTime = Date.now();
