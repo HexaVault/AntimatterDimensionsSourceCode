@@ -152,6 +152,7 @@ export const realityUpgrades = [
     name: "The Boundless Flow",
     id: 11,
     cost: 50,
+    prefixedNumber: true,
     requirement: () => `${format(Currency.infinitiesBanked.value, 2)}/${format(DC.E12)} Banked Infinities`,
     checkRequirement: () => Currency.infinitiesBanked.exponent >= 12,
     checkEvent: [GAME_EVENT.ETERNITY_RESET_AFTER, GAME_EVENT.REALITY_FIRST_UNLOCKED],
@@ -196,6 +197,7 @@ export const realityUpgrades = [
     name: "The Eternal Flow",
     id: 14,
     cost: 50,
+    prefixedNumber: true,
     requirement: () => `${format(Currency.eternities.value, 2)}/${format(1e7)} Eternities`,
     checkRequirement: () => Currency.eternities.gte(1e7),
     checkEvent: [GAME_EVENT.ETERNITY_RESET_AFTER, GAME_EVENT.REALITY_FIRST_UNLOCKED],
@@ -291,6 +293,7 @@ export const realityUpgrades = [
     name: "Parity of Singularity",
     id: 20,
     cost: 1500,
+    prefixedNumber: true,
     requirement: () => `${formatInt(100)} days total play time after unlocking the Black Hole
       (Currently: ${Time.timeSinceBlackHole.toStringShort(false)})`,
     hasFailed: () => !BlackHole(1).isUnlocked && Currency.realityMachines.lt(100),
@@ -305,6 +308,7 @@ export const realityUpgrades = [
     name: "Cosmic Conglomerate",
     id: 21,
     cost: 100000,
+    prefixedNumber: true,
     requirement: () => `${formatInt(Replicanti.galaxies.total + player.galaxies +
       player.dilation.totalTachyonGalaxies)}/${formatInt(2800)} total Galaxies from all types`,
     checkRequirement: () =>
@@ -317,6 +321,7 @@ export const realityUpgrades = [
     name: "Temporal Transcendence",
     id: 22,
     cost: 100000,
+    prefixedNumber: true,
     requirement: () => `${format(Currency.timeShards.value, 1)}/${format(DC.E28000)} Time Shards`,
     checkRequirement: () => Currency.timeShards.exponent >= 28000,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,

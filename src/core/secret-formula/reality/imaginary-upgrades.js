@@ -102,6 +102,7 @@ export const imaginaryUpgrades = [
     name: "Suspicion of Interference",
     id: 11,
     cost: 5e7,
+    prefixedNumber: true,
     requirement: () => `${format(1e90)} total Relic Shards
       (You have ${format(player.celestials.effarig.relicShards, 2)})`,
     hasFailed: () => false,
