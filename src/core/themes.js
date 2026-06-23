@@ -16,7 +16,7 @@ export const Theme = function Theme(name, config) {
   this.isSecret = config.isSecret;
 
   this.isDefault = function() {
-    return name === "Normal";
+    return name === "Normal" || name === "S9";
   };
 
   this.isAvailable = function() {
