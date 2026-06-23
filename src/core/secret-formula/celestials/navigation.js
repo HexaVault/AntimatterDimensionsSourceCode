@@ -1528,7 +1528,7 @@ export const celestialNavigation = {
 
           if (player.celestials.laitela.fastestCompletion > 30 && Laitela.difficultyTier < 0) return [
             dmdText,
-            `Beat Lai'tela's Reality in less that ${format(30)} seconds`
+            `Beat Lai'tela's Reality in less than ${format(30)} seconds`
           ];
           return [
             dmdText,

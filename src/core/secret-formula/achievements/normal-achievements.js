@@ -1365,7 +1365,7 @@ export const normalAchievements = [
   {
     id: 187,
     name: "The One with Dilated Time",
-    description: "Unlock Dilation while Doomed.",
+    description: "Dilate Time while Doomed.",
     checkRequirement: () => PelleStrikes.dilation.hasStrike,
     checkEvent: GAME_EVENT.PELLE_STRIKE_UNLOCKED,
     // We forgot to disable a singularity milestone while balancing Pelle; now it's disabled
