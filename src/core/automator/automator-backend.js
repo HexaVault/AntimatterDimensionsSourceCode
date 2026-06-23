@@ -965,6 +965,7 @@ export const AutomatorBackend = {
     this.state.mode = AUTOMATOR_MODE.PAUSE;
   },
 
+  // eslint-disable-next-line no-shadow
   start(scriptID = this.state.topLevelScript, initialMode = AUTOMATOR_MODE.RUN, compile = true) {
     // Automator execution behaves oddly across new games, so we explicitly stop it from running if not unlocked
     if (!Player.automatorUnlocked) return;
@@ -1030,6 +1031,9 @@ export const AutomatorBackend = {
     clear() {
       this._data = [];
       player.reality.automator.state.stack.length = 0;
+    },
+    forEach(fn) {
+      this._data.forEach(fn);
     },
     initializeFromSave(commands) {
       this._data = [];
