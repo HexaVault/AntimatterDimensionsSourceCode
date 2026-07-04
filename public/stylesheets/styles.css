@@ -50,6 +50,12 @@ html {
 
 /* css vars */
 
+/* stylelint-disable-next-line max-line-length */
+/* we use <b> tags all over the place in order to indicate boldness, but a change has made this not work. Rather than replace all cases, we can use this shortcut */
+b {
+  font-weight: bold;
+}
+
 #ui {
   display: flex;
   justify-content: center;
