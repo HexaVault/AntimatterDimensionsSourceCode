@@ -808,7 +808,7 @@ export const normalAchievements = [
   {
     id: 116,
     name: "Do I really need to infinity",
-    get description() { return `Eternity with only ${formatInt(1)} Infinity.`; },
+    get description() { return `Eternity with no more than ${formatInt(1)} Infinity.`; },
     checkRequirement: () => Currency.infinities.lte(1),
     checkEvent: GAME_EVENT.ETERNITY_RESET_BEFORE,
     reward: "Multiplier to Infinity Points based on Infinities.",
