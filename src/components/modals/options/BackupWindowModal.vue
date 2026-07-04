@@ -101,7 +101,7 @@ export default {
         </PrimaryButton>
         <PrimaryButton class="o-btn-file-ops">
           <input
-            class="c-file-import"
+            class="c-file-import-backup"
             type="file"
             accept=".txt"
             @change="importAsFile"

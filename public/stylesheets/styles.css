@@ -2757,6 +2757,23 @@ br {
   cursor: pointer;
 }
 
+.c-file-import-backup {
+  width: 14.5rem;
+  height: 2.55rem;
+  position: absolute;
+  bottom: 5.5rem;
+  left: 31.3rem;
+  opacity: 0;
+  margin: -1.9rem -2rem;
+}
+
+.c-file-import-backup::before {
+  content: " ";
+  font-size: 100rem;
+  padding: 10rem 20rem;
+  cursor: pointer;
+}
+
 /* #region l-options-grid */
 
 .l-options-grid {
