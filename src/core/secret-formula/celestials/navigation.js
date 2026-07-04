@@ -1826,7 +1826,8 @@ export const celestialNavigation = {
           if (complete === 1) {
             return [
               "Unlock Pelle",
-              "The Celestial of Antimatter"
+              "The Celestial of Antimatter",
+              "Lai'tela's Reality has been destroyed"
             ];
           }
           let laitelaString = `${format(Currency.eternityPoints.value)} / ${format("1e4000")} EP`;
