@@ -294,9 +294,9 @@ export default {
   display: block;
   border: 0.05rem solid #999999;
   color: var(--color-text);
-  width: 100%;
+  width: 100.2%;
   padding: 0.2rem 0;
-  margin: -0.1rem;
+  margin: -0.05rem;
 }
 
 .l-no-records {
