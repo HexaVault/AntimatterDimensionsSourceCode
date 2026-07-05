@@ -15,7 +15,7 @@ export const changelog = [
 If you see this, please let whoever pushed this PR know that the date needs changing & this text removed. Thanks in advance - Hexa.<br>
 <b>List of changes/fixes:</b><br>
 <ul>
-<li>Fixed Sacrifice stating it was automated if Achievement 118/Sacrifce was disabled, under some conditions.</li>
+<li>Fixed Sacrifice stating it was automated if Achievement 118/Sacrifice was disabled, under some conditions.</li>
 <li>Fixed Achievement 143 not specifying that it only effects Antimatter Galaxies.</li>
 <li>Fixed manual purchases of the 2xIP rebuyable upgrade resulting in being capped 1 upgrade too early,
 resulting in the player missing out on a small boost to make the multiplier a nice 1e1,000,000.</li>
@@ -110,9 +110,9 @@ amount of a prestige yet.</li>
 <br>
 <b>Bugfixes:</b><br>
 <ul>
-<li>Fixed a BH pulse does not apply during offline progess</li>
-<li>Fixed a BH inversion is active while it is being disabled</li>
-<li>Fixed a BH inversion slider is visible while it is being disabled</li>
+<li>Fixed BH pulse not applying during offline progess</li>
+<li>Fixed a case where BH inversion is active while it is disabled</li>
+<li>Fixed a case where BH inversion slider is visible while it is disabled</li>
 </ul>
 <br>
 `
