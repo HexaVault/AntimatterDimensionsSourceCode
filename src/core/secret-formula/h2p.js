@@ -580,7 +580,7 @@ applied depends on which Infinity Dimension you purchase. <!-- Sorry Garnet :/ -
 <br>
 <br>
 <b>Infinity Dimension Production:</b> Just like Antimatter Dimensions, each Infinity Dimension produces the
-next lowest Infinity Dimension.
+previous Infinity Dimension.
 <br>
 <br>
 Every crunch, your produced Infinity Dimensions are reset to the amount you purchased. While the production
