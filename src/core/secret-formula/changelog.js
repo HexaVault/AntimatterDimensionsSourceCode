@@ -9,7 +9,7 @@ export const changelog = [
    * }
    */
   {
-    date: [2026, 6, 4],
+    date: [2026, 7, 21],
     name: "The Great Bugfix",
     info: `
 If you see this, please let whoever pushed this PR know that the date needs changing & this text removed. Thanks in advance - Hexa.<br><br>
@@ -91,6 +91,28 @@ the player gaining no eternities.</li>
 <li>Fixed Scour to Empower checking the number of glyphs you had before you did a Reality reset, rather than after.</li>
 <li>Fixed the 3rd Pelle Rift stating that it allowed you to gain 1% of EP every second, rather than 10% of EP every second.</li>
 <li>Fixed some spelling/punctuation, and standardized it elsewhere.</li>
+</ul>
+<br>
+`
+  },
+  {
+    date: [2026, 7, 17],
+    name: "Celebrate iOS Version Release",
+    info: `
+Celebrating the official iOS launch! It's finally time to perform a Big Crunch right in your pocket.
+A massive thank you to all the contributors who helped expand our dimensions to iOS! 
+<br>
+<br>
+<b>Added things:</b><br>
+<ul>
+<li>Added iOS Testers in the Credits</li>
+<li>Added a link to the iOS Version</li>
+<li>Added all AD Autobuyers' buy max/singles toggle button</li>
+</ul>
+<br>
+<b>Text change:</b><br>
+<ul>
+<li>Changed Android Developer to Mobile Developer in the Credits</li>
 </ul>
 <br>
 `
