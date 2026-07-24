@@ -91,8 +91,9 @@ export const shortcuts = [
     keys: ["r"],
     type: "bindHotkey",
     function: () => {
-      replicantiGalaxyRequest();
       setHoldingR(true);
+      if (!Replicanti.galaxies.canBuyMore) return;
+      replicantiGalaxyRequest();
     },
     visible: () => Replicanti.areUnlocked || PlayerProgress.eternityUnlocked()
   }, {

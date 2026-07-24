@@ -285,7 +285,7 @@ export const realityUpgrades = [
       (You have ${formatInt(Glyphs.allGlyphs.countWhere(g => g.type !== "companion"))})`,
     hasFailed: () => Glyphs.allGlyphs.countWhere(g => g.type !== "companion") < 30,
     checkRequirement: () => Glyphs.allGlyphs.countWhere(g => g.type !== "companion") >= 30,
-    checkEvent: GAME_EVENT.REALITY_RESET_BEFORE,
+    checkEvent: GAME_EVENT.REALITY_RESET_AFTER,
     description: "You can sacrifice Glyphs for permanent bonuses (Shift + click)",
     formatCost: value => format(value, 1, 0)
   },

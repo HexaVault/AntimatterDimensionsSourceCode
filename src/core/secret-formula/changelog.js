@@ -12,7 +12,7 @@ export const changelog = [
     date: [2026, 6, 4],
     name: "The Great Bugfix",
     info: `
-If you see this, please let whoever pushed this PR know that the date needs changing & this text removed. Thanks in advance - Hexa.<br>
+If you see this, please let whoever pushed this PR know that the date needs changing & this text removed. Thanks in advance - Hexa.<br><br>
 <b>List of changes/fixes:</b><br>
 <ul>
 <li>Fixed Sacrifice stating it was automated if Achievement 118/Sacrifice was disabled, under some conditions.</li>
@@ -82,6 +82,14 @@ untill the player reloaded the subtab (i.e. by changing away and back).</li>
 the progress to gaining more TP, rather than the progress to the Galaxy Generator.</li>
 <li>Fixed rows of tables in the Past Prestige Runs subtab being very slightly thinner then normal if it had stated that you had not done X 
 amount of a prestige yet.</li>
+<li>Fixed some cases where numbers were not being handled as normal, resulting in the Blind theme not making them hidden.</li>
+<li>Fixed the Time Dimension tab stating you had "1 Tickspeed upgrades".</li>
+<li>Fixed a case where you would eternity in an EC, resulting in studies being reset before giving any banked infinities, leading to 
+the player gaining no eternities.</li>
+<li>Fixed the R keybind for Replicanti Galaxy showing the Cosmic Conglomerate lock modal when you could not actually buy an RG</li>
+<li>Removed useless player data.</li>
+<li>Fixed Scour to Empower checking the number of glyphs you had before you did a Reality reset, rather than after.</li>
+<li>Fixed the 3rd Pelle Rift stating that it allowed you to gain 1% of EP every second, rather than 10% of EP every second.</li>
 <li>Fixed some spelling/punctuation, and standardized it elsewhere.</li>
 </ul>
 <br>

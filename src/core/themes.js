@@ -27,7 +27,7 @@ export const Theme = function Theme(name, config) {
 
   this.displayName = function() {
     if (!this.isSecret || !this.isAvailable()) return name;
-    // Secret themes are stored as "S9Whatever", so we need to strip the SN part
+    // Secret themes are stored as "S9Whatever", so we need to strip the S9 part
     return player.secretUnlocks.themes.find(theme => theme.match(/^S[0-9]*/u)[0] === name).replace(/^S[0-9]*/u, "");
   };
 

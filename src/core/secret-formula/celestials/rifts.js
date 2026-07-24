@@ -136,7 +136,7 @@ export const pelleRifts = {
       {
         resource: "chaos",
         requirement: 1,
-        description: () => `You gain ${formatPercents(0.01)} of your EP gained on Eternity per second`,
+        description: () => `You gain ${formatPercents(0.1)} of your EP gained on Eternity per second`,
       },
     ],
     galaxyGeneratorText: "Your Galaxies are too fragmented, you must stabilize the $value"
